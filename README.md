@@ -53,7 +53,7 @@ User can log in or create a new account.
 This page is empty, only with my business logo
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219991367-fde26f41-96d9-45f3-be87-8814b13d4fb6.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219991367-fde26f41-96d9-45f3-be87-8814b13d4fb6.png" width="850" height="400">
 </p>
 
 
@@ -67,7 +67,7 @@ In this session the admin and staff can change, add, edit or remove products.
    * Delete Product
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219991337-2cc29e07-1282-4f87-af68-cede6f968bb2.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219991337-2cc29e07-1282-4f87-af68-cede6f968bb2.png" width="850" height="400">
 </p>
 
    
@@ -82,11 +82,11 @@ The user can view the quantity of product in stock, as well as view the history 
    * Delete Product Stock
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219991295-d51daaa6-d151-4906-b51d-8cf7baba3e78.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219991295-d51daaa6-d151-4906-b51d-8cf7baba3e78.png" width="850" height="400">
 </p>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219994532-cacff7ff-03cc-4064-b55e-6cbf8eb39b1f.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219994532-cacff7ff-03cc-4064-b55e-6cbf8eb39b1f.png" width="850" height="400">
 </p>
 
 
@@ -100,7 +100,7 @@ In this session the user has the main account information. The user can update a
    * Logout
    
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219992009-c6c3691a-80b5-47c3-a1a8-b20fc49b8358.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219992009-c6c3691a-80b5-47c3-a1a8-b20fc49b8358.png" width="850" height="400">
 </p>
 
 
