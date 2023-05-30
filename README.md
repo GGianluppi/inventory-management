@@ -45,7 +45,7 @@ User can log in or create a new account.
 </p>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219991403-afdd1c79-b641-47ec-ad9c-23026a3a035a.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219991403-afdd1c79-b641-47ec-ad9c-23026a3a035a.png" width="850" height="400">
 </p>
 
 **Home page**
