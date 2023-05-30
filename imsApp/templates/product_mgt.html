@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% load humanize %} {% block pageContent %}
+    <style>
+    .page-item.active .page-link {
+        background-color: #FFECB3 !important;
+        border: 1px solid white;
+    }
+    .page-link {
+        color: grey !important;
+    }
+    body {
+        background-color:#EAF2E3;
+    }
+    </style>
+    
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card card-default rounded-0 shadow">
+        <div class="card-header">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <h4 class="card-title fw-bold">Product</h4>
+                <div class="tools">
+                    <button type="button" class="btn bg-warning btn-sm text-dark fw-bold bg-opacity-25" id='add_new'><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <table class="table table-bordered table-hover" id="product-list">
+                    <colgroup>
+                        <col width="7%">
+                        <col width="15%">
+                        <col width="20%">
+                        <col width="25%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="9%">
+                    </colgroup>
+                    <thead>
+                        <tr class="bg-warning bg-text-dark bg-opacity-25">
+                            <th class="px-2 py-2 text-center fw-bold">Nº</th>
+                            <th class="px-2 py-2 text-center fw-bold">Date</th>
+                            <th class="px-2 py-2 text-center fw-bold">Name</th>
+                            <th class="px-2 py-2 text-center fw-bold">Description</th>
+                            <th class="px-2 py-2 text-center fw-bold">Price</th>
+                            <th class="px-2 py-2 text-center fw-bold">Status</th>
+                            <th class="px-2 py-2 text-center fw-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td class="px-2 py-1 align-middle text-center">{{ forloop.counter }}</td>
+                            <td class="px-2 py-1 align-middle text-center">{{ product.date_created|date:"Y-m-d" }}</td>
+                            <td class="px-2 py-1 align-middle">{{ product }}</td>
+                            <td class="px-2 py-1 align-middle">
+                                <p class="m-0 text-truncate">{{ product.description }}</p>
+                            </td>
+                            
+                            <td class="px-2 py-1 align-middle text-end">{{ product.price|intcomma }}</td>
+                            <td class="px-2 py-1 align-middle text-center">
+                                {% if product.status == '1' %}
+                                <span class="badge bg-success bg-gradient px-2">Available</span> {% else %}
+                                <span class="badge bg-danger bg-gradient px-2">Not Available</span> {% endif %}
+                            </td>
+                            <td class="px-2 py-1 align-middle text-center">
+                                <button class="edit-data fa fa-edit" type="button" href="javascript:void(0)" data-id="{{ product.pk }}" title="Edit"></button>
+                                <a>&nbsp;</a>
+                                <button class="delete-data fa fa-trash" type="button" data-id="{{ product.pk }}" title="Delete"></button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock pageContent %} {% block ScriptBlock %}
+<script>
+    $(function() {
+        $('#add_new').click(function() {
+            uni_modal('<i class="fa fa-plus"></i> Add Product', '{% url "manage-product" %}', 'modal-md')
+        })
+        $('.edit-data').click(function() {
+            uni_modal('<i class="fa fa-edit"></i> Edit Product', '{% url "manage-product" %}/' + $(this).attr('data-id'), 'modal-md')
+        })
+        $('.delete-data').click(function() {
+            _conf("Are you sure to delete this Product permanently?", "delete_product", [$(this).attr('data-id')])
+        })
+
+        $('#product-list').DataTable({
+            columnDefs: [{
+                orderable: false,
+                targets: 6
+            }],
+            initComplete: function(settings, json) {
+                $('table td, table th').addClass('px-3 py-1')
+            },
+            drawCallback: function(settings) {
+                $('table td, table th').addClass('px-3 py-1')
+            }
+        })
+        
+    })
+
+    function delete_product($id) {
+        start_loader();
+        var _this = $(this)
+        $('.err-msg').remove();
+        var el = $('<div>')
+        el.addClass("alert alert-danger err-msg")
+        el.hide()
+        $.ajax({
+            url: '{% url "delete-product" %}',
+            headers: {
+                'X-CSRFToken': "{{csrf_token}}"
+            },
+            method: 'POST',
+            data: {
+                id: $id
+            },
+            dataType: 'json',
+            error: err => {
+                console.log(err)
+                el.text('An error occurred.')
+                el.show('slow')
+                end_loader()
+            },
+            success: function(resp) {
+                if (resp.status == 'success') {
+                    location.reload()
+                } else if (!!resp.msg) {
+                    el.text('An error occurred.')
+                    el.show('slow')
+                } else {
+                    el.text('An error occurred.')
+                    el.show('slow')
+                }
+                end_loader()
+            }
+            
+        })
+
+    }
+</script>
+{% endblock ScriptBlock %}
