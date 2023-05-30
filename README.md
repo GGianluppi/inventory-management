@@ -41,7 +41,7 @@ The staff users are only allowed to manage the site. Futhermore, the users can a
 User can log in or create a new account.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/104764600/219991044-085fbaec-301c-4887-a08e-f2459de78fda.png" width="850" height="450">
+<img src="https://user-images.githubusercontent.com/104764600/219991044-085fbaec-301c-4887-a08e-f2459de78fda.png" width="850" height="400">
 </p>
 
 <p align="center">
