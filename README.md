@@ -2,7 +2,7 @@
 
 Inventory management system was created to improve the operation of my business. The main idea of this project is to create an inventory system for my business to manage products. This project has a login screen, products and inventory session where the admin can manage, adding or removing new products. The project will be improved with new functions.
 
-# Technologies used:
+## Technologies used:
 
  * Python
  * Django
@@ -14,7 +14,7 @@ Inventory management system was created to improve the operation of my business.
  * Bootstrap 5.
 
 
-# How the webpage works?
+## How the webpage works?
 
 It has a simple and pleasant user interface using Bootstrap 5. The project also has user-friendly features and functionalities. The system can be accessed by users which are the admin and staff. After acces the website you can enter these fields:
 
@@ -34,7 +34,7 @@ The admin has the privilege to access Django's admin panel/site and manage the l
 The staff users are only allowed to manage the site. Futhermore, the users can add stocks to each product and the system automatically calculate the available stocks per product.
 
 
-# Project structure:
+## Project structure:
 
 **Login and Registration Page**
 
@@ -104,7 +104,7 @@ In this session the user has the main account information. The user can update a
 </p>
 
 
-# Possible improvements:
+## Possible improvements:
 
 As all applications this one can also be improved. Possible improvements:
 
@@ -114,7 +114,7 @@ As all applications this one can also be improved. Possible improvements:
 * Notificaitons to email about new products or any changes
 
 
-# How to launch application:
+## How to launch application:
 
 **1. Clone Project**
 
