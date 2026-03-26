@@ -2,6 +2,8 @@
 
 Inventory management system was created to improve the operation of my business. The main idea of this project is to create an inventory system for my business to manage products. This project has a login screen, products and inventory session where the admin can manage, adding or removing new products. The project will be improved with new functions.
 
+OBS: All product names used in this project are fictitious and are for demonstration purposes only.
+
 # Technologies used:
 
  * Python
